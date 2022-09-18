@@ -1,0 +1,543 @@
+James Bond Testing using Linear Regression Classifiers
+
+
+First removed Useless which removed the attribute indices which removed exactly three values, being Movie title, Depicted Film Location, and Shooting Location.
+
+Reordered so that the target attribute being World Adjusted Gross is at the bottom
+
+Removed values I found to be useless being US Gross, World Gross and Budget.
+
+Used NumberictoNominal on Year, Video Game and Top 100
+
+Normalized all values
+
+
+Ready to test With Linear Regression and 10 fold cross validation
+
+
+
+
+
+
+TEST 1 - Target attribute is Worldwide adjusted gross
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-8 -num-decimal-places 4
+Relation:     jamesbondmodifiedstandardized-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Reorder-R1-13,15-26,14-weka.filters.unsupervised.attribute.Remove-R11,13-14-weka.filters.unsupervised.attribute.NumericToNominal-R1,21,22-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0
+Instances:    24
+Attributes:   23
+              Year
+              Bond
+              Director
+              Composer
+              Primary Writer
+              Secondary Writer
+              Cinematographer
+              Secondary_Depicted_Film_Loc
+              Bond_Car_MFG
+              Bond_Girl_Nat_Primary
+              US_Adj
+              Budget_Adj
+              Film_Length
+              Avg_User_IMDB
+              Avg_User_Rtn_Tom
+              Conquests
+              Martinis
+              BJB
+              Kills_Bond
+              Kills_Others
+              Top_100
+              Video_Game
+              World_Adj
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+Linear Regression Model
+
+World_Adj =
+
+  28248.9311 * Year=1985,1987,1983,1962,1974,1997,1981,1999,1969,1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  30828.5732 * Year=1987,1983,1962,1974,1997,1981,1999,1969,1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  16417.507  * Year=1983,1962,1974,1997,1981,1999,1969,1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  15898.3817 * Year=1997,1981,1999,1969,1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  12123.4253 * Year=1981,1999,1969,1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  10804.6935 * Year=1999,1969,1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  10188.5538 * Year=1969,1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+   8822.2129 * Year=1995,2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+   7484.3772 * Year=2002,1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  10064.6695 * Year=1963,2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  17278.8203 * Year=2008,1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  18597.1447 * Year=1971,1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  16710.9112 * Year=1979,2006,1977,1967,1973,2015,1964,1965,2012 +
+  12571.1086 * Year=2006,1977,1967,1973,2015,1964,1965,2012 +
+  19685.1822 * Year=1977,1967,1973,2015,1964,1965,2012 +
+  24551.9539 * Year=1967,1973,2015,1964,1965,2012 +
+  30679.533  * Year=1973,2015,1964,1965,2012 +
+  22052.874  * Year=2015,1964,1965,2012 +
+  42739.341  * Year=1964,1965,2012 +
+  52732.5582 * Year=1965,2012 +
+  53324.1178 * Year=2012 +
+   7447.7331 * Bond=George Lazenby,Pierce Brosnan,Roger Moore,Sean Connery,Daniel Craig +
+   6440.3808 * Director=Marc Forster,Terence Young,Lewis Gilbert,Guy Hamilton,Sam Mendes +
+   7316.9629 * Director=Terence Young,Lewis Gilbert,Guy Hamilton,Sam Mendes +
+   5729.6278 * Director=Lewis Gilbert,Guy Hamilton,Sam Mendes +
+   6468.4946 * Director=Guy Hamilton,Sam Mendes +
+   6774.7398 * Director=Sam Mendes +
+  28248.8933 * Composer=Monty Norman,Bill Conti,?????ric Serra,David Arnold,John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+  10041.7875 * Composer=Bill Conti,?????ric Serra,David Arnold,John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+   6064.6923 * Composer=?????ric Serra,David Arnold,John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+   8745.5998 * Composer=John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+  14242.2519 * Composer=Marvin Hamlisch,George Martin,Thomas Newman +
+  22990.6351 * Composer=George Martin,Thomas Newman +
+   6774.747  * Composer=Thomas Newman +
+  -9982.4183 * Primary Writer=Richard Maibaum,Neal Purvis,N/A,Roald Dahl +
+  24353.7391 * Primary Writer=N/A,Roald Dahl +
+ -11432.22   * Primary Writer=Roald Dahl +
+  10159.6701 * Secondary Writer=Jeffrey Caine,N/A,Tom Mankiewicz,Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+   8156.967  * Secondary Writer=N/A,Tom Mankiewicz,Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+   6240.6827 * Secondary Writer=Tom Mankiewicz,Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+   6172.9576 * Secondary Writer=Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+   4112.7827 * Secondary Writer=Robert Wade,Paul Dehn,John Hopkins +
+  33320.884  * Secondary Writer=Paul Dehn,John Hopkins +
+  47554.0604 * Secondary Writer=John Hopkins +
+   7447.7333 * Cinematographer=Alan Hume,Robert Elswit,Adrian Biddle,Michael Reed,David Tattersall,Phil M????heux,Roberto Schaefer,Jean Tournier,Claude Renoir,Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+   6440.3763 * Cinematographer=Roberto Schaefer,Jean Tournier,Claude Renoir,Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+   7316.9669 * Cinematographer=Jean Tournier,Claude Renoir,Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+   5112.6015 * Cinematographer=Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+   6774.7516 * Cinematographer=Hoyte van Hoytema,Roger Deakins +
+  53324.1143 * Cinematographer=Roger Deakins +
+  30722.3389 * Secondary_Depicted_Film_Loc=Slovakia,India,Jamaica,Portugal,Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+   8740.5619 * Secondary_Depicted_Film_Loc=India,Jamaica,Portugal,Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+  -5032.5438 * Secondary_Depicted_Film_Loc=Portugal,Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+   8583.1141 * Secondary_Depicted_Film_Loc=Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+   7287.4319 * Secondary_Depicted_Film_Loc=Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+   6716.5785 * Secondary_Depicted_Film_Loc=Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+   5591.7247 * Secondary_Depicted_Film_Loc=Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+   7428.0448 * Secondary_Depicted_Film_Loc=United States,Japan,Turkey,Morocco,Switzlerland +
+  -6463.2581 * Secondary_Depicted_Film_Loc=Japan,Turkey,Morocco,Switzlerland +
+ -12635.9456 * Secondary_Depicted_Film_Loc=Morocco,Switzlerland +
+  16191.0587 * Secondary_Depicted_Film_Loc=Switzlerland +
+   8740.5596 * Bond_Car_MFG=Bajaj,Sunbeam,Citro????n,Mercury,BMW,Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+  -5032.5434 * Bond_Car_MFG=Citro????n,Mercury,BMW,Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+  -5579.4197 * Bond_Car_MFG=BMW,Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+  -6055.0333 * Bond_Car_MFG=Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+   3958.27   * Bond_Car_MFG=Ford,Lotus,Aston Martin,Toyota +
+ -14006.0488 * Bond_Girl_Nat_Primary=Sweedish,Swiss,Malaysian,American,Polish,Italian,English,Japanese,French +
+   9024.576  * Bond_Girl_Nat_Primary=Swiss,Malaysian,American,Polish,Italian,English,Japanese,French +
+   7839      * Bond_Girl_Nat_Primary=Polish,Italian,English,Japanese,French +
+   6740.3649 * Bond_Girl_Nat_Primary=Italian,English,Japanese,French +
+  14181.4956 * Bond_Girl_Nat_Primary=English,Japanese,French +
+   4214.326  * Bond_Girl_Nat_Primary=Japanese,French +
+   7558.7581 * Bond_Girl_Nat_Primary=French +
+  62316.692  * US_Adj +
+  -8220.2128 * Film_Length +
+   8827.7975 * Avg_User_IMDB +
+  19329.2328 * Avg_User_Rtn_Tom +
+ -10788.2773 * BJB +
+  13294.7395 * Kills_Bond +
+ -11901.2727 * Kills_Others +
+   9836.0133 * Top_100=1 +
+ 248153.8624
+
+Time taken to build model: 0.01 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.4102
+Mean absolute error                 144794.0794
+Root mean squared error             194168.896 
+Relative absolute error                 80.6841 %
+Root relative squared error             86.9286 %
+Total Number of Instances               24     
+
+
+
+
+
+TEST 2, repeat same steps this time remove year as it skews results
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-8 -num-decimal-places 4
+Relation:     jamesbondmodifiedstandardized-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Reorder-R1-13,15-26,14-weka.filters.unsupervised.attribute.Remove-R11,13-14-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.NumericToNominal-R20,21-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0
+Instances:    24
+Attributes:   22
+              Bond
+              Director
+              Composer
+              Primary Writer
+              Secondary Writer
+              Cinematographer
+              Secondary_Depicted_Film_Loc
+              Bond_Car_MFG
+              Bond_Girl_Nat_Primary
+              US_Adj
+              Budget_Adj
+              Film_Length
+              Avg_User_IMDB
+              Avg_User_Rtn_Tom
+              Conquests
+              Martinis
+              BJB
+              Kills_Bond
+              Kills_Others
+              Top_100
+              Video_Game
+              World_Adj
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+Linear Regression Model
+
+World_Adj =
+
+ -14125.8959 * Bond=Daniel Craig +
+  11783.4842 * Director=Marc Forster,Terence Young,Lewis Gilbert,Guy Hamilton,Sam Mendes +
+  15251.7711 * Director=Terence Young,Lewis Gilbert,Guy Hamilton,Sam Mendes +
+  14553.0913 * Director=Lewis Gilbert,Guy Hamilton,Sam Mendes +
+   9295.4675 * Director=Guy Hamilton,Sam Mendes +
+  17353.356  * Director=Sam Mendes +
+  52148.2509 * Composer=Monty Norman,Bill Conti,?????ric Serra,David Arnold,John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+  17722.3417 * Composer=Bill Conti,?????ric Serra,David Arnold,John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+  18639.5968 * Composer=?????ric Serra,David Arnold,John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+  24627.1205 * Composer=John Barry,Marvin Hamlisch,George Martin,Thomas Newman +
+  42091.0208 * Composer=Marvin Hamlisch,George Martin,Thomas Newman +
+  49821.2795 * Composer=George Martin,Thomas Newman +
+  17353.3417 * Composer=Thomas Newman +
+ -15666.3871 * Primary Writer=Richard Maibaum,Neal Purvis,N/A,Roald Dahl +
+   7639.2213 * Primary Writer=Neal Purvis,N/A,Roald Dahl +
+  49324.545  * Primary Writer=N/A,Roald Dahl +
+  25233.575  * Secondary Writer=Jeffrey Caine,N/A,Tom Mankiewicz,Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+  17318.6627 * Secondary Writer=N/A,Tom Mankiewicz,Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+  15571.3193 * Secondary Writer=Tom Mankiewicz,Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+  22262.5651 * Secondary Writer=Christopher Wood,Robert Wade,Paul Dehn,John Hopkins +
+  11645.1385 * Secondary Writer=Robert Wade,Paul Dehn,John Hopkins +
+  81061.1978 * Secondary Writer=Paul Dehn,John Hopkins +
+ 105920.8344 * Secondary Writer=John Hopkins +
+  12519.0622 * Cinematographer=Alan Hume,Robert Elswit,Adrian Biddle,Michael Reed,David Tattersall,Phil M????heux,Roberto Schaefer,Jean Tournier,Claude Renoir,Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+   8064.2255 * Cinematographer=Phil M????heux,Roberto Schaefer,Jean Tournier,Claude Renoir,Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+  11783.5717 * Cinematographer=Roberto Schaefer,Jean Tournier,Claude Renoir,Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+  15251.7655 * Cinematographer=Jean Tournier,Claude Renoir,Ted Moore,Freddie Young,Hoyte van Hoytema,Roger Deakins +
+  17353.3516 * Cinematographer=Hoyte van Hoytema,Roger Deakins +
+ 132145.8696 * Cinematographer=Roger Deakins +
+  56810.4764 * Secondary_Depicted_Film_Loc=Slovakia,India,Jamaica,Portugal,Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+  14956.0789 * Secondary_Depicted_Film_Loc=India,Jamaica,Portugal,Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+ -15194.1564 * Secondary_Depicted_Film_Loc=Portugal,Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+  12210.9463 * Secondary_Depicted_Film_Loc=Spain,Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+  14397.4394 * Secondary_Depicted_Film_Loc=Kazakhstan,Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+  15038.7028 * Secondary_Depicted_Film_Loc=Russia,Hong Kong,Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+  13776.991  * Secondary_Depicted_Film_Loc=Bahamas,Italy,Czech Republic,United States,Japan,Turkey,Morocco,Switzlerland +
+   8408.9943 * Secondary_Depicted_Film_Loc=United States,Japan,Turkey,Morocco,Switzlerland +
+ -14691.8163 * Secondary_Depicted_Film_Loc=Japan,Turkey,Morocco,Switzlerland +
+ -26030.2041 * Secondary_Depicted_Film_Loc=Morocco,Switzlerland +
+  49152.2932 * Secondary_Depicted_Film_Loc=Switzlerland +
+  14956.0763 * Bond_Car_MFG=Bajaj,Sunbeam,Citro????n,Mercury,BMW,Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+ -15194.1458 * Bond_Car_MFG=Citro????n,Mercury,BMW,Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+ -14566.4656 * Bond_Car_MFG=BMW,Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+ -16778.3555 * Bond_Car_MFG=Bently,AMC,Ford,Lotus,Aston Martin,Toyota +
+   9706.5987 * Bond_Car_MFG=Ford,Lotus,Aston Martin,Toyota +
+ -28203.5339 * Bond_Girl_Nat_Primary=Sweedish,Swiss,Malaysian,American,Polish,Italian,English,Japanese,French +
+  18794.4454 * Bond_Girl_Nat_Primary=Swiss,Malaysian,American,Polish,Italian,English,Japanese,French +
+   9554.2409 * Bond_Girl_Nat_Primary=Malaysian,American,Polish,Italian,English,Japanese,French +
+  18512.1722 * Bond_Girl_Nat_Primary=Polish,Italian,English,Japanese,French +
+  13145.0594 * Bond_Girl_Nat_Primary=Italian,English,Japanese,French +
+  32171.3192 * Bond_Girl_Nat_Primary=English,Japanese,French +
+   7012.6853 * Bond_Girl_Nat_Primary=Japanese,French +
+  14977.105  * Bond_Girl_Nat_Primary=French +
+ 137787.916  * US_Adj +
+  35219.054  * Avg_User_IMDB +
+  54699.065  * Avg_User_Rtn_Tom +
+ -22982.2676 * Martinis +
+ -16539.8268 * BJB +
+  38017.0158 * Kills_Bond +
+ -20666.1159 * Kills_Others +
+  24386.8576 * Top_100=1 +
+ 194795.1098
+
+Time taken to build model: 0.01 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.5176
+Mean absolute error                 125379.6082
+Root mean squared error             182065.115 
+Relative absolute error                 69.8657 %
+Root relative squared error             81.5098 %
+Total Number of Instances               24     
+
+
+
+Slightly better
+
+
+
+
+Tried Running same experiment with M5P, much better results
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.M5P -M 4.0 -num-decimal-places 4
+Relation:     jamesbondmodifiedstandardized-weka.filters.unsupervised.attribute.Reorder-R1-16,18-29,17-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R11,13-weka.filters.unsupervised.attribute.NumericToNominal-R1,22,23-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    24
+Attributes:   23
+              Bond
+              Director
+              Composer
+              Primary Writer
+              Secondary Writer
+              Cinematographer
+              Secondary_Depicted_Film_Loc
+              Bond_Car_MFG
+              Bond_Girl_Nat_Primary
+              US_Adj
+              Budget
+              Budget_Adj
+              Film_Length
+              Avg_User_IMDB
+              Avg_User_Rtn_Tom
+              Conquests
+              Martinis
+              BJB
+              Kills_Bond
+              Kills_Others
+              Top_100
+              Video_Game
+              World_Adj
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+M5 pruned model tree:
+(using smoothed linear models)
+LM1 (24/21.704%)
+
+LM num: 1
+World_Adj = 
+	87530.0322 * Director=Lee Tamahori,Martin Campbell,Marc Forster,Terence Young,Lewis Gilbert,Guy Hamilton,Sam Mendes 
+	+ 268214.1008 * Composer=George Martin,Thomas Newman 
+	+ 660313.373 * US_Adj 
+	+ 318439.3795
+
+Number of Rules : 1
+
+Time taken to build model: 0 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.867 
+Mean absolute error                  85524.3319
+Root mean squared error             113965.9879
+Relative absolute error                 47.657  %
+Root relative squared error             51.0221 %
+Total Number of Instances               24     
+
+
+
+
+
+
+
+
+TEST 2 - Target attribute is US Adjusted Gross
+
+
+
+Trying with Linear Regression
+
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-8 -num-decimal-places 4
+Relation:     jamesbondmodifiedstandardized-weka.filters.unsupervised.attribute.Reorder-R1-14,16-29,15-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R11-12-weka.filters.unsupervised.attribute.NumericToNominal-R1,22,23-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    24
+Attributes:   23
+              Bond
+              Director
+              Composer
+              Primary Writer
+              Secondary Writer
+              Cinematographer
+              Secondary_Depicted_Film_Loc
+              Bond_Car_MFG
+              Bond_Girl_Nat_Primary
+              World_Adj
+              Budget
+              Budget_Adj
+              Film_Length
+              Avg_User_IMDB
+              Avg_User_Rtn_Tom
+              Conquests
+              Martinis
+              BJB
+              Kills_Bond
+              Kills_Others
+              Top_100
+              Video_Game
+              US_Adj
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+Linear Regression Model
+
+US_Adj =
+
+  13719.6025 * Bond=George Lazenby,Roger Moore,Pierce Brosnan,Daniel Craig,Sean Connery +
+   5776.4358 * Bond=Roger Moore,Pierce Brosnan,Daniel Craig,Sean Connery +
+  13716.762  * Bond=Sean Connery +
+  -8427.0259 * Director=Martin Campbell,Roger Spottiswoode,Marc Forster,Lee Tamahori,Guy Hamilton,Lewis Gilbert,Sam Mendes,Terence Young +
+  -3702.1558 * Director=Roger Spottiswoode,Marc Forster,Lee Tamahori,Guy Hamilton,Lewis Gilbert,Sam Mendes,Terence Young +
+   5656.357  * Director=Lewis Gilbert,Sam Mendes,Terence Young +
+   6395.5359 * Director=Terence Young +
+  40010.1047 * Composer=Monty Norman,Bill Conti,?????ric Serra,Marvin Hamlisch,George Martin,David Arnold,John Barry,Thomas Newman +
+  13383.8339 * Composer=Bill Conti,?????ric Serra,Marvin Hamlisch,George Martin,David Arnold,John Barry,Thomas Newman +
+   5239.5673 * Composer=?????ric Serra,Marvin Hamlisch,George Martin,David Arnold,John Barry,Thomas Newman +
+   5445.5662 * Composer=George Martin,David Arnold,John Barry,Thomas Newman +
+   4378.4961 * Composer=David Arnold,John Barry,Thomas Newman +
+   8279.386  * Composer=John Barry,Thomas Newman +
+ -14231.3484 * Composer=Thomas Newman +
+ -17287.7168 * Primary Writer=Bruce Feirstein,Richard Maibaum,N/A,Neal Purvis,Roald Dahl +
+ -10643.6783 * Primary Writer=Richard Maibaum,N/A,Neal Purvis,Roald Dahl +
+ -13625.7896 * Primary Writer=Neal Purvis,Roald Dahl +
+  -9283.2341 * Primary Writer=Roald Dahl +
+  10884.8428 * Secondary Writer=Jeffrey Caine,Tom Mankiewicz,Christopher Wood,N/A,Robert Wade,Paul Dehn,John Hopkins +
+   7013.3363 * Secondary Writer=Tom Mankiewicz,Christopher Wood,N/A,Robert Wade,Paul Dehn,John Hopkins +
+  16377.8061 * Secondary Writer=Christopher Wood,N/A,Robert Wade,Paul Dehn,John Hopkins +
+   8260.2723 * Secondary Writer=N/A,Robert Wade,Paul Dehn,John Hopkins +
+   8471.1116 * Secondary Writer=Robert Wade,Paul Dehn,John Hopkins +
+  56641.8846 * Secondary Writer=Paul Dehn,John Hopkins +
+  82541.9571 * Secondary Writer=John Hopkins +
+  13719.6113 * Cinematographer=Alan Hume,Michael Reed,Adrian Biddle,Phil M????heux,Claude Renoir,Robert Elswit,Roberto Schaefer,Hoyte van Hoytema,David Tattersall,Jean Tournier,Ted Moore,Freddie Young,Roger Deakins +
+  -4073.7162 * Cinematographer=Adrian Biddle,Phil M????heux,Claude Renoir,Robert Elswit,Roberto Schaefer,Hoyte van Hoytema,David Tattersall,Jean Tournier,Ted Moore,Freddie Young,Roger Deakins +
+  -8427.0313 * Cinematographer=Phil M????heux,Claude Renoir,Robert Elswit,Roberto Schaefer,Hoyte van Hoytema,David Tattersall,Jean Tournier,Ted Moore,Freddie Young,Roger Deakins +
+  12486.9338 * Cinematographer=David Tattersall,Jean Tournier,Ted Moore,Freddie Young,Roger Deakins +
+  14555.3109 * Cinematographer=Jean Tournier,Ted Moore,Freddie Young,Roger Deakins +
+  16812.3097 * Cinematographer=Freddie Young,Roger Deakins +
+  41446.2092 * Cinematographer=Roger Deakins +
+ -13765.3195 * Secondary_Depicted_Film_Loc=Siberia,Portugal,Jamaica,Spain,India,Russia,Kazakhstan,Czech Republic,Italy,Morocco,Hong Kong,United States,Turkey,Bahamas,Japan,Switzlerland +
+  21399.9658 * Secondary_Depicted_Film_Loc=Jamaica,Spain,India,Russia,Kazakhstan,Czech Republic,Italy,Morocco,Hong Kong,United States,Turkey,Bahamas,Japan,Switzlerland +
+  14533.1624 * Secondary_Depicted_Film_Loc=Spain,India,Russia,Kazakhstan,Czech Republic,Italy,Morocco,Hong Kong,United States,Turkey,Bahamas,Japan,Switzlerland +
+  10387.5684 * Secondary_Depicted_Film_Loc=India,Russia,Kazakhstan,Czech Republic,Italy,Morocco,Hong Kong,United States,Turkey,Bahamas,Japan,Switzlerland +
+   4162.9197 * Secondary_Depicted_Film_Loc=Russia,Kazakhstan,Czech Republic,Italy,Morocco,Hong Kong,United States,Turkey,Bahamas,Japan,Switzlerland +
+  -4314.7146 * Secondary_Depicted_Film_Loc=Morocco,Hong Kong,United States,Turkey,Bahamas,Japan,Switzlerland +
+   7225.2926 * Secondary_Depicted_Film_Loc=Hong Kong,United States,Turkey,Bahamas,Japan,Switzlerland +
+   9589.8027 * Secondary_Depicted_Film_Loc=United States,Turkey,Bahamas,Japan,Switzlerland +
+  16981.1781 * Secondary_Depicted_Film_Loc=Bahamas,Japan,Switzlerland +
+   8641.8173 * Secondary_Depicted_Film_Loc=Japan,Switzlerland +
+  25816.0059 * Secondary_Depicted_Film_Loc=Switzlerland +
+  -8993.8353 * Bond_Car_MFG=Citro????n,AMC,Mercury,Bajaj,BMW,Bently,Lotus,Aston Martin,Ford,Toyota +
+ -10317.5253 * Bond_Car_MFG=AMC,Mercury,Bajaj,BMW,Bently,Lotus,Aston Martin,Ford,Toyota +
+  12195.8427 * Bond_Car_MFG=Mercury,Bajaj,BMW,Bently,Lotus,Aston Martin,Ford,Toyota +
+   9053.67   * Bond_Car_MFG=Bajaj,BMW,Bently,Lotus,Aston Martin,Ford,Toyota +
+  -3639.3844 * Bond_Car_MFG=Bently,Lotus,Aston Martin,Ford,Toyota +
+   9212.7516 * Bond_Car_MFG=Lotus,Aston Martin,Ford,Toyota +
+  11016.1815 * Bond_Car_MFG=Ford,Toyota +
+  -9283.2403 * Bond_Car_MFG=Toyota +
+ -13765.3214 * Bond_Girl_Nat_Primary=Swiss,Sweedish,Polish,American,Malaysian,Italian,English,French,Japanese +
+ -14726.0849 * Bond_Girl_Nat_Primary=Sweedish,Polish,American,Malaysian,Italian,English,French,Japanese +
+  11407.0049 * Bond_Girl_Nat_Primary=Polish,American,Malaysian,Italian,English,French,Japanese +
+   7878.4562 * Bond_Girl_Nat_Primary=English,French,Japanese +
+   3860.3534 * Bond_Girl_Nat_Primary=French,Japanese +
+  -9283.248  * Bond_Girl_Nat_Primary=Japanese +
+  44661.1081 * World_Adj +
+ -16378.1675 * Budget +
+  -9908.4888 * Film_Length +
+ -14101.1022 * Avg_User_IMDB +
+  -7649.4752 * Conquests +
+  18317.8183 * Kills_Bond +
+   9068.7089 * Top_100=1 +
+  13736.7563 * Video_Game=0 +
+  48009.9539
+
+Time taken to build model: 0.01 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                 -0.0953
+Mean absolute error                  79401.7171
+Root mean squared error             111478.9913
+Relative absolute error                119.0579 %
+Root relative squared error            117.5272 %
+Total Number of Instances               24     
+
+
+Trying with M5P
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.M5P -M 4.0 -num-decimal-places 4
+Relation:     jamesbondmodifiedstandardized-weka.filters.unsupervised.attribute.Reorder-R1-14,16-29,15-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R11-12-weka.filters.unsupervised.attribute.NumericToNominal-R1,22,23-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    24
+Attributes:   23
+              Bond
+              Director
+              Composer
+              Primary Writer
+              Secondary Writer
+              Cinematographer
+              Secondary_Depicted_Film_Loc
+              Bond_Car_MFG
+              Bond_Girl_Nat_Primary
+              World_Adj
+              Budget
+              Budget_Adj
+              Film_Length
+              Avg_User_IMDB
+              Avg_User_Rtn_Tom
+              Conquests
+              Martinis
+              BJB
+              Kills_Bond
+              Kills_Others
+              Top_100
+              Video_Game
+              US_Adj
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+M5 pruned model tree:
+(using smoothed linear models)
+
+World_Adj <= 0.544 : LM1 (18/27.679%)
+World_Adj >  0.544 : LM2 (6/28.006%)
+
+LM num: 1
+US_Adj = 
+	21357.6901 * Secondary_Depicted_Film_Loc=Turkey,Bahamas,Japan,Switzlerland 
+	+ 269045.8329 * World_Adj 
+	+ 81687.4447
+
+LM num: 2
+US_Adj = 
+	-34870.2857 * Primary Writer=N/A,Neal Purvis,Roald Dahl 
+	+ 65791.9415 * Secondary_Depicted_Film_Loc=Turkey,Bahamas,Japan,Switzlerland 
+	+ 187177.5647 * World_Adj 
+	+ 146332.999
+
+Number of Rules : 2
+
+Time taken to build model: 0 seconds
+
+=== Cross-validation ===
+=== Summary ===
+
+Correlation coefficient                  0.204 
+Mean absolute error                  68164.2621
+Root mean squared error             100163.2002
+Relative absolute error                102.208  %
+Root relative squared error            105.5975 %
+Total Number of Instances               24     
+
